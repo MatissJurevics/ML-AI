@@ -4,8 +4,11 @@ from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
 from models.perceptron import Perceptron
 from tqdm import tqdm
+from save_load_model import save_weights_and_biases, load_weights_and_biases
 
 models = {}
+
+
 
 mnist = load_digits()
 X,y = mnist.data, mnist.target
@@ -32,3 +35,8 @@ def accuracy(y_pred, y_test):
 
 print(accuracy(y_pred, y_test))
 
+for i in range(10):
+    plt.imshow(models[i].weights.reshape(8,8))
+    plt.show()
+
+# save_weights_and_biases(models)

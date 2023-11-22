@@ -7,3 +7,9 @@ Current things I have done:
 - Logistic Regression
 - Single Perceptron
 - OvR classifier using 10 perceptrons for MNIST dataset
+
+
+## File Structure
+
+**/models**: Contains all the models I have created
+*mnist.py*: The script that trains an OvR classifier to classify the MNIST dataset

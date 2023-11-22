@@ -11,10 +11,12 @@ class Perceptron:
         return np.where(x>0, 1,0)
 
     def fit(self, X, y):
+        # Initialising weights
         n_samples, n_features = X.shape
         self.weights = np.random.uniform(low=-0.5, high=0.5, size=n_features)
         self.bias = np.random.uniform(low=-0.5, high=0.5)
 
+        # Training the model
         for _ in range(self.n_itirs):
             for example_index, example_features in enumerate(X):
                 y_input = np.dot(example_features, self.weights) + self.bias
